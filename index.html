@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Regularización 2026 - J&C Abogados</title>
-    <!-- Apple-style Typography -->
+    <title>Regularización Extraordinaria 2026 - J&C Abogados</title>
+    <meta name="description"
+        content="Guía operativa completa sobre la Regularización Extraordinaria España 2026. Marco legal, requisitos, figuras de arraigo, protocolo y checklist documental por J&C Abogados y Asociados.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -98,7 +98,6 @@
             font-weight: 300;
         }
 
-        /* Search & Navigation */
         .controls-container {
             position: sticky;
             top: 90px;
@@ -140,7 +139,6 @@
             box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3);
         }
 
-        /* Content Cards */
         .section-block {
             margin-bottom: 3.5rem;
             animation: fadeIn 0.6s ease-out both;
@@ -224,6 +222,21 @@
             font-size: 1rem;
         }
 
+        .card.destacado::before {
+            opacity: 1;
+            background: var(--gold-light);
+        }
+
+        .card.critica::before {
+            background: #ef4444;
+            opacity: 0.7;
+        }
+
+        .card.alta::before {
+            background: #f59e0b;
+            opacity: 0.7;
+        }
+
         .tags {
             display: flex;
             flex-wrap: wrap;
@@ -243,7 +256,24 @@
             border: 1px solid rgba(217, 119, 6, 0.1);
         }
 
-        /* Actions */
+        .tag.danger {
+            background: rgba(239, 68, 68, 0.1);
+            color: #ef4444;
+            border-color: rgba(239, 68, 68, 0.15);
+        }
+
+        .tag.success {
+            background: rgba(34, 197, 94, 0.1);
+            color: #22c55e;
+            border-color: rgba(34, 197, 94, 0.15);
+        }
+
+        .tag.highlight {
+            background: rgba(251, 191, 36, 0.12);
+            color: var(--gold-light);
+            border-color: rgba(251, 191, 36, 0.2);
+        }
+
         .card-actions {
             display: flex;
             gap: 1.5rem;
@@ -263,13 +293,121 @@
             align-items: center;
             gap: 0.5rem;
             transition: 0.2s;
+            font-family: 'Inter', sans-serif;
         }
 
         .action-btn:hover {
             color: var(--accent);
         }
 
-        /* Bottom Contact Button */
+        /* Alert card for critical rules */
+        .alert-card {
+            background: rgba(239, 68, 68, 0.06);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+            border-radius: 12px;
+            padding: 1.2rem 1.5rem;
+            margin-top: 1rem;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            color: #fca5a5;
+            font-size: 0.95rem;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        .alert-card i {
+            color: #ef4444;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        /* Checklist specific */
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .check-box {
+            width: 24px;
+            height: 24px;
+            min-width: 24px;
+            border-radius: 6px;
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+            margin-top: 2px;
+            font-size: 12px;
+            color: transparent;
+        }
+
+        .checklist-item.checked .check-box {
+            background: #22c55e;
+            border-color: #22c55e;
+            color: white;
+        }
+
+        .checklist-item.checked h3 {
+            text-decoration: line-through;
+            opacity: 0.5;
+        }
+
+        .checklist-item.checked p {
+            text-decoration: line-through;
+            opacity: 0.4;
+        }
+
+        .progress-container {
+            background: var(--secondary);
+            border: 1px solid var(--border-glass);
+            border-radius: 12px;
+            padding: 1.2rem 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.6rem;
+        }
+
+        .progress-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .progress-count {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--gold-light);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: rgba(255, 255, 255, 0.06);
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 3px;
+            background: linear-gradient(135deg, var(--accent), var(--gold-light));
+            transition: width 0.4s ease;
+        }
+
+        /* CTA */
         .cta-container {
             position: fixed;
             bottom: 2rem;
@@ -350,7 +488,6 @@
             transform: translateY(-1px) scale(0.98);
         }
 
-        /* Empty State */
         #empty-state {
             text-align: center;
             padding: 5rem 0;
@@ -363,7 +500,6 @@
             margin-bottom: 1rem;
         }
 
-        /* Mobile Adjustments */
         @media (max-width: 600px) {
             .hero {
                 padding: 2.5rem 0 1.5rem;
@@ -377,7 +513,6 @@
                 padding: 1.4rem;
             }
 
-            /* Compact CTA for mobile */
             .cta-container {
                 bottom: 0.5rem;
                 width: calc(100% - 1.5rem);
@@ -424,9 +559,11 @@
 
     <div class="container">
         <section class="hero">
-            <span class="hero-badge">Guía Interactiva 2026</span>
-            <h1 id="app-hero-title">Cargando...</h1>
-            <p id="app-hero-desc"></p>
+            <span class="hero-badge">⚖️ Real Decreto 1155/2024</span>
+            <h1 id="app-hero-title">Regularización Extraordinaria España 2026</h1>
+            <p id="app-hero-desc">Guía operativa completa sobre la reforma de extranjería. Marco legal, requisitos de
+                elegibilidad, figuras de arraigo, procedimiento administrativo y checklist documental para su
+                expediente.</p>
         </section>
 
         <div class="controls-container">
@@ -435,22 +572,20 @@
             </nav>
         </div>
 
-        <main id="main-content">
-            <!-- Dynamic Content -->
-        </main>
+        <main id="main-content"></main>
 
         <div id="empty-state">
             <i class="fas fa-search"></i>
-            <p style="color: var(--text-muted); font-size: 1.1rem;">No se encontraron resultados para tu búsqueda.</p>
+            <p style="color: var(--text-muted); font-size: 1.1rem;">No se encontraron resultados.</p>
         </div>
     </div>
 
     <div class="cta-container">
         <div class="cta-card">
             <div class="cta-message">
-                <p><span class="highlight">Asegura tu expediente hoy mismo con expertos.</span></p>
+                <p><span class="highlight">Asegure su expediente con expertos en extranjería.</span></p>
             </div>
-            <a href="#" class="cta-btn" id="cta-btn">
+            <a href="https://wa.me/34623970415" class="cta-btn" id="cta-btn">
                 <span>WhatsApp</span>
                 <i class="fas fa-comment-dots"></i>
             </a>
@@ -458,92 +593,222 @@
     </div>
 
     <script>
-        // Datos embebidos directamente para compatibilidad local (evita error CORS)
         const appData = {
-            "app_title": "Guía de Regularización 2026 - J&C Abogados",
-            "hero": {
-                "title": "Guía Rápida: Regularización Extraordinaria 2026 en España",
-                "description": "El Gobierno de España ha aprobado un proceso extraordinario para regularizar a cientos de miles de personas extranjeras que ya residen en el país. Esta medida, vigente en 2026, busca ofrecerles una autorización de residencia y trabajo, garantizando sus derechos e integración social."
-            },
             "sections": [
                 {
-                    "id": "requisitos",
-                    "title": "Requisitos Clave",
+                    "id": "marco-legal",
+                    "title": "Marco Legal y Fundamentación",
                     "icon": "⚖️",
                     "items": [
                         {
-                            "title": "Permanencia en España",
-                            "description": "Estar en España antes del 31 de diciembre de 2025. Se debe acreditar una permanencia continuada de al menos 5 meses al solicitar.",
-                            "tags": ["residencia", "fecha límite"]
+                            "title": "Base Legal Primaria",
+                            "description": "Real Decreto 1155/2024 (Disposición Adicional Segunda). Reforma estructural del Reglamento de Extranjería, no una ley independiente.",
+                            "tags": ["RD 1155/2024", "reglamento"]
                         },
                         {
-                            "title": "Antecedentes Penales",
-                            "description": "Carecer de antecedentes penales. Requisito indispensable tanto en España como en países de residencia anteriores.",
-                            "tags": ["legal", "seguridad"]
+                            "title": "Mecanismo de Regularización",
+                            "description": "Introducción de figuras de arraigo excepcionales dentro del Reglamento de Extranjería vigente. Se tramitan como disposiciones transitorias.",
+                            "tags": ["arraigo", "disposición transitoria"]
                         },
                         {
-                            "title": "Protección Internacional",
-                            "description": "Solicitantes de protección internacional incluidos. Basta haber presentado la solicitud de asilo antes del 31 de diciembre de 2025.",
-                            "tags": ["asilo", "refugio"]
+                            "title": "Estado Actual del Trámite",
+                            "description": "Fase final de trámite, consolidado al 25 de febrero de 2026. La normativa se encuentra en vigor y las solicitudes están abiertas.",
+                            "tags": ["vigente", "febrero 2026"]
                         }
                     ]
                 },
                 {
-                    "id": "calendario",
-                    "title": "Calendario y Plazos",
-                    "icon": "📅",
+                    "id": "requisitos",
+                    "title": "Requisitos de Elegibilidad",
+                    "icon": "📋",
+                    "alert": "Cualquier salida del país durante los 5 meses de permanencia requerida anula automáticamente la elegibilidad.",
                     "items": [
                         {
-                            "title": "Ventana de Solicitud",
-                            "description": "Plazo de solicitud: de abril al 30 de junio de 2026. Es una ventana de tiempo limitada e improrrogable para presentar el expediente.",
-                            "tags": ["fechas", "urgente"]
+                            "title": "Fecha de Corte",
+                            "description": "Presencia física demostrable en España antes de las 23:59h del 31 de diciembre de 2025. Este es un requisito temporal estricto e insubsanable.",
+                            "tags": ["fecha límite", "criticidad alta"],
+                            "tagStyle": "danger"
+                        },
+                        {
+                            "title": "Continuidad de Permanencia",
+                            "description": "Mínimo de 5 meses de permanencia ininterrumpida en territorio español al momento de presentar la solicitud. No se admiten interrupciones.",
+                            "tags": ["5 meses", "criticidad alta"],
+                            "tagStyle": "danger"
+                        }
+                    ]
+                },
+                {
+                    "id": "figuras-arraigo",
+                    "title": "Figuras de Arraigo 2026",
+                    "icon": "🗂️",
+                    "items": [
+                        {
+                            "title": "Arraigo Extraordinario (DT 6ª)",
+                            "description": "Para personas en situación irregular previo a 2026. Es la vía más flexible y el principal motor de captación de la firma. Tramitación preferente.",
+                            "tags": ["recomendada", "DT 6ª"],
+                            "tagStyle": "highlight",
+                            "destacado": true
+                        },
+                        {
+                            "title": "Arraigo Sociolaboral",
+                            "description": "Requiere un contrato de trabajo de mínimo 20 horas semanales con salario mínimo interprofesional. La legalización queda vinculada a una oferta de empleo activa.",
+                            "tags": ["contrato", "empleo"]
+                        },
+                        {
+                            "title": "Arraigo Social",
+                            "description": "Exige acreditar medios económicos equivalentes al 100% del IPREM más un informe social favorable. Orientado a casos con medios propios o vínculos familiares.",
+                            "tags": ["IPREM", "informe social"]
+                        },
+                        {
+                            "title": "Segunda Oportunidad",
+                            "description": "Dirigido a personas que tuvieron una residencia previa en España que no fue renovada. Permite la recuperación del estatus de residente legal.",
+                            "tags": ["renovación", "recuperación"]
+                        }
+                    ]
+                },
+                {
+                    "id": "protocolo",
+                    "title": "Protocolo Administrativo",
+                    "icon": "🏛️",
+                    "items": [
+                        {
+                            "title": "Canal de Presentación: MERCURIO",
+                            "description": "Toda la tramitación es 100% telemática vía la plataforma MERCURIO. Minimiza errores de forma, evita desplazamientos y asegura recepción inmediata con acuse.",
+                            "tags": ["telemático", "MERCURIO"]
+                        },
+                        {
+                            "title": "Autorización Provisional (15 días)",
+                            "description": "Se emite en un máximo de 15 días hábiles desde la admisión a trámite. Otorga: activación de NIE, permiso provisional de residencia y trabajo, y derecho al alta en Seguridad Social.",
+                            "tags": ["NIE", "seguridad social", "15 días"],
+                            "tagStyle": "success"
+                        },
+                        {
+                            "title": "Plazo de Resolución: 3 meses",
+                            "description": "Compromiso administrativo de resolución en 3 meses. El sentido del silencio es NEGATIVO (desestimatorio). Protocolo J&C: acción de impulso administrativo obligatoria al Día 91.",
+                            "tags": ["silencio negativo", "día 91"],
+                            "tagStyle": "danger"
+                        }
+                    ]
+                },
+                {
+                    "id": "checklist",
+                    "title": "Checklist Documental",
+                    "icon": "✅",
+                    "isChecklist": true,
+                    "items": [
+                        {
+                            "title": "Pasaporte Completo",
+                            "description": "Pasaporte vigente con todas las páginas escaneadas (incluidas las vacías).",
+                            "tags": ["identidad"]
+                        },
+                        {
+                            "title": "Antecedentes Penales",
+                            "description": "Certificado de antecedentes penales de los últimos 5 años, debidamente apostillado y con traducción jurada al español.",
+                            "tags": ["conducta", "apostilla"]
+                        },
+                        {
+                            "title": "Empadronamiento Histórico",
+                            "description": "Certificado histórico de empadronamiento que acredite la presencia en España antes del 31/12/2025.",
+                            "tags": ["permanencia", "hito 2025"]
+                        },
+                        {
+                            "title": "Pruebas de Estancia",
+                            "description": "Documentación acreditativa de estancia continuada durante los últimos 5 meses: facturas, informes médicos, billetes de transporte, etc.",
+                            "tags": ["continuidad", "5 meses"]
+                        },
+                        {
+                            "title": "Modelo 790-052",
+                            "description": "Justificante de pago validado de la tasa administrativa (Modelo 790-052). Importe: 38,28 €.",
+                            "tags": ["tasa", "38,28 €"]
+                        }
+                    ]
+                },
+                {
+                    "id": "riesgos",
+                    "title": "Gestión de Riesgos",
+                    "icon": "⚠️",
+                    "items": [
+                        {
+                            "title": "Antecedentes Penales",
+                            "description": "Denegación AUTOMÁTICA del expediente. Cualquier delito con sentencia firme impide la regularización sin excepciones.",
+                            "tags": ["denegación automática"],
+                            "tagStyle": "danger",
+                            "cardClass": "critica"
+                        },
+                        {
+                            "title": "Sistema Schengen (SIS)",
+                            "description": "Rechazo automático si el solicitante consta como persona «rechazable» en el Sistema de Información Schengen.",
+                            "tags": ["rechazo automático"],
+                            "tagStyle": "danger",
+                            "cardClass": "critica"
+                        },
+                        {
+                            "title": "Antecedentes Policiales",
+                            "description": "Valoración casuística. No implica denegación automática pero requiere defensa técnica especializada por parte del abogado.",
+                            "tags": ["valoración", "defensa técnica"]
+                        },
+                        {
+                            "title": "Órdenes de Expulsión",
+                            "description": "La presentación de la solicitud de regularización paraliza la ejecución de cualquier orden de expulsión administrativa vigente.",
+                            "tags": ["paralización", "expulsión"]
+                        },
+                        {
+                            "title": "Plazo de Subsanación",
+                            "description": "Ventana crítica de 10 a 15 días para corregir errores documentales. No responder en plazo supone el archivo del expediente.",
+                            "tags": ["10-15 días", "urgente"],
+                            "tagStyle": "danger"
                         }
                     ]
                 },
                 {
                     "id": "beneficios",
-                    "title": "Derechos Otorgados",
-                    "icon": "✅",
+                    "title": "Propuesta de Valor",
+                    "icon": "🌟",
                     "items": [
                         {
-                            "title": "Autorización de Trabajo",
-                            "description": "Autorización de residencia y trabajo por 1 año. Permite trabajar en cualquier sector y lugar de España desde el primer día.",
-                            "tags": ["trabajo", "derechos"]
+                            "title": "Trabajo 360°",
+                            "description": "La autorización habilita el trabajo por cuenta ajena y por cuenta propia de forma simultánea desde el primer día.",
+                            "tags": ["cuenta ajena", "autónomo"],
+                            "tagStyle": "success"
                         },
                         {
-                            "title": "Protección Familiar",
-                            "description": "Hijos menores obtienen permiso de 5 años. Se regularizan simultáneamente con sus progenitores si ya están en España.",
-                            "tags": ["familia", "menores"]
+                            "title": "Estabilidad Familiar",
+                            "description": "Los hijos menores del solicitante obtienen automáticamente permisos de residencia de 5 años de duración.",
+                            "tags": ["5 años", "menores"],
+                            "tagStyle": "success"
+                        },
+                        {
+                            "title": "Seguridad Social Inmediata",
+                            "description": "Acceso al sistema público de salud y alta en cotización a la Seguridad Social a partir del día 15 tras la autorización provisional.",
+                            "tags": ["sanidad", "cotización"],
+                            "tagStyle": "success"
+                        },
+                        {
+                            "title": "Ruta a Nacionalidad",
+                            "description": "El tiempo de residencia obtenido computa al 100% para residencia de larga duración y para la solicitud de nacionalidad española.",
+                            "tags": ["nacionalidad", "larga duración"],
+                            "tagStyle": "success"
+                        },
+                        {
+                            "title": "Libertad Schengen",
+                            "description": "Movilidad libre por los países del Espacio Schengen de la Unión Europea (máximo 90 días por semestre).",
+                            "tags": ["UE", "90 días"],
+                            "tagStyle": "success"
                         }
                     ]
                 }
-            ],
-            "contact": {
-                "button_text": "Escríbenos",
-                "link": "https://wa.me/34623970415"
-            }
+            ]
         };
 
         function init() {
-            renderUI();
-        }
-
-        function renderUI() {
-            document.title = appData.app_title;
-            document.getElementById('app-hero-title').innerText = appData.hero.title;
-            document.getElementById('app-hero-desc').innerText = appData.hero.description;
-            // Only update the link, not the button text
-            document.getElementById('cta-btn').href = appData.contact.link;
-
             const nav = document.getElementById('nav-sections');
             appData.sections.forEach(section => {
                 const chip = document.createElement('div');
                 chip.className = 'nav-chip';
                 chip.innerText = section.title;
-                chip.onclick = () => filterBy(section.id, chip);
+                chip.onclick = function () { filterBy(section.id, chip); };
                 nav.appendChild(chip);
             });
-
             renderSections(appData.sections);
         }
 
@@ -552,6 +817,70 @@
             container.innerHTML = '';
 
             sections.forEach((section, idx) => {
+                let cardsHtml = '';
+
+                // Alert card if exists
+                if (section.alert) {
+                    cardsHtml += `
+                        <div class="alert-card">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <span>${section.alert}</span>
+                        </div>`;
+                }
+
+                section.items.forEach(item => {
+                    const extraClass = item.cardClass ? ` ${item.cardClass}` : (item.destacado ? ' destacado' : '');
+                    const tagClass = item.tagStyle || '';
+
+                    if (section.isChecklist) {
+                        cardsHtml += `
+                            <div class="card${extraClass}" onclick="toggleCheck(this)">
+                                <div class="checklist-item">
+                                    <div class="check-box"><i class="fas fa-check"></i></div>
+                                    <div>
+                                        <h3>${item.title}</h3>
+                                        <p>${item.description}</p>
+                                        <div class="tags">
+                                            ${item.tags.map(t => `<span class="tag ${tagClass}">${t}</span>`).join('')}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>`;
+                    } else {
+                        const copyStr = `${item.title}: ${item.description}`.replace(/'/g, "\\'");
+                        cardsHtml += `
+                            <div class="card${extraClass}">
+                                <h3>${item.title}</h3>
+                                <p>${item.description}</p>
+                                <div class="tags">
+                                    ${item.tags.map(t => `<span class="tag ${tagClass}">${t}</span>`).join('')}
+                                </div>
+                                <div class="card-actions">
+                                    <button class="action-btn" onclick="copyText('${copyStr}')">
+                                        <i class="fas fa-copy"></i> Copiar
+                                    </button>
+                                    <button class="action-btn" onclick="toggleDone(this)">
+                                        <i class="fas fa-check-circle"></i> Marcar leído
+                                    </button>
+                                </div>
+                            </div>`;
+                    }
+                });
+
+                // Progress bar for checklist
+                if (section.isChecklist) {
+                    cardsHtml += `
+                        <div class="progress-container">
+                            <div class="progress-header">
+                                <span class="progress-label">Progreso Documental</span>
+                                <span class="progress-count" id="progressCount">0 / ${section.items.length}</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+                            </div>
+                        </div>`;
+                }
+
                 const sectionHtml = `
                     <div class="section-block" id="sec-${section.id}" style="animation-delay: ${idx * 0.1}s">
                         <div class="section-header">
@@ -559,26 +888,10 @@
                             <h2>${section.title}</h2>
                         </div>
                         <div class="cards-grid">
-                            ${section.items.map(item => `
-                                <div class="card">
-                                    <h3>${item.title}</h3>
-                                    <p>${item.description}</p>
-                                    <div class="tags">
-                                        ${item.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
-                                    </div>
-                                    <div class="card-actions">
-                                        <button class="action-btn" onclick="copyText('${item.title}: ${item.description}')">
-                                            <i class="fas fa-copy"></i> Copiar
-                                        </button>
-                                        <button class="action-btn" onclick="toggleDone(this)">
-                                            <i class="fas fa-check-circle"></i> Marcar leído
-                                        </button>
-                                    </div>
-                                </div>
-                            `).join('')}
+                            ${cardsHtml}
                         </div>
-                    </div>
-                `;
+                    </div>`;
+
                 container.innerHTML += sectionHtml;
             });
         }
@@ -599,7 +912,7 @@
         function copyText(text) {
             navigator.clipboard.writeText(text);
             const alertBox = document.createElement('div');
-            alertBox.style = "position:fixed; top:20px; right:20px; background:var(--accent); color:white; padding:15px 25px; border-radius:10px; z-index:1000; animation:slideIn 0.3s forwards";
+            alertBox.style = "position:fixed; top:20px; right:20px; background:var(--accent); color:white; padding:15px 25px; border-radius:10px; z-index:1000; font-family:'Inter',sans-serif; font-weight:600; font-size:0.9rem; box-shadow:0 8px 25px rgba(0,0,0,0.3);";
             alertBox.innerHTML = '<i class="fas fa-check-circle"></i> Texto copiado';
             document.body.appendChild(alertBox);
             setTimeout(() => alertBox.remove(), 2000);
@@ -611,6 +924,23 @@
             card.style.opacity = isDone ? '1' : '0.4';
             card.style.filter = isDone ? 'none' : 'grayscale(0.5)';
             btn.innerHTML = isDone ? '<i class="fas fa-check-circle"></i> Marcar leído' : '<i class="fas fa-undo"></i> Desmarcar';
+        }
+
+        function toggleCheck(cardEl) {
+            const item = cardEl.querySelector('.checklist-item');
+            item.classList.toggle('checked');
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const total = document.querySelectorAll('.checklist-item').length;
+            const checked = document.querySelectorAll('.checklist-item.checked').length;
+            const countEl = document.getElementById('progressCount');
+            const fillEl = document.getElementById('progressFill');
+            if (countEl && fillEl) {
+                countEl.textContent = `${checked} / ${total}`;
+                fillEl.style.width = `${(checked / total) * 100}%`;
+            }
         }
 
         init();
